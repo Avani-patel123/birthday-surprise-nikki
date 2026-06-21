@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nikki 💖 - 10 Years of Friendship</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;600;700&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Decoration Elements -->
+    <div class="floating-hearts">
+        <div class="heart">❤️</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+    </div>
+
+    <div class="floating-stars">
+        <div class="star">✨</div>
+        <div class="star">⭐</div>
+        <div class="star">✨</div>
+    </div>
+
+    <!-- Canvas for confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- OPENING SCREEN -->
+    <section id="opening-screen" class="screen active">
+        <div class="opening-container">
+            <div class="title-container">
+                <h1 class="bouncing-title">
+                    <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span>
+                    <span>B</span><span>i</span><span>r</span><span>t</span><span>h</span><span>d</span><span>a</span><span>y</span>
+                </h1>
+                <div class="name-display">
+                    <h2 class="nikki-name">✨ Nikki ✨</h2>
+                </div>
+            </div>
+
+            <div class="floating-balloons">
+                <div class="balloon" style="--color: #FFB6C1;">🎈</div>
+                <div class="balloon" style="--color: #DDA0DD;">🎈</div>
+                <div class="balloon" style="--color: #FFE4E1;">🎈</div>
+                <div class="balloon" style="--color: #E6E6FA;">🎈</div>
+                <div class="balloon" style="--color: #FFF0F5;">🎈</div>
+            </div>
+
+            <p class="opening-message">Nikki, thank you for making these 10 years the happiest years of my life 💕</p>
+
+            <div class="cartoon-stickers">
+                <div class="sticker hello-kitty">🎀</div>
+                <div class="sticker doraemon">🤖</div>
+                <div class="sticker totoro">👻</div>
+            </div>
+
+            <button class="start-button" onclick="startJourney()">
+                Ready to relive 10 years together? 💖
+            </button>
+
+            <div class="cute-text">
+                <p>From Lee to Nikki 💌</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SCREENS (5 Years) -->
+    <section id="year1-screen" class="screen timeline-screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="year-container">
+            <div class="year-header">
+                <h2 class="year-title">Reliving in Imaginations, The Beginning of Us 🌸</h2>
+                <p class="year-subtitle">Class 7 - SMC Jain School</p>
+            </div>
+
+            <div class="year-content">
+                <div class="memory-text">
+                    <p>My first day in SMC Jain School and I met you. From Day 1 till now, I never felt with you like a stranger. You always made me feel every place like home. The start of the gujju-Telugu friends combo in Karnataka, you introduced me to a whole new life journey... I will always regret not being in the throwball team though! 😂😂</p>
+                </div>
+
+                <div class="photo-gallery" id="year1-gallery">
+                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                </div>
+
+                <div class="memory-caption">US 💖</div>
+
+                <div class="cartoon-theme">
+                    <div class="sticker-large">🎀</div>
+                    <p class="theme-text">Hello Kitty shaking hands 🤝</p>
+                </div>
+
+                <div class="music-player">
+                    <button class="music-btn" onclick="playYearMusic('year1')">🎵 Play Memories Song 🎵</button>
+                    <p class="music-credit">CTw8P2GcMKE (YouTube)</p>
+                </div>
+            </div>
+
+            <div class="excitement-container">
+                <p class="excitement-text">How excited are you to see the next chapter? 👀</p>
+                <div class="button-group">
+                    <button class="excitement-btn not-excited-btn" onclick="dodgeButton(this, 'year1')">😒 Not Excited</button>
+                    <button class="excitement-btn excited-btn" onclick="dodgeButton(this, 'year1')">😊 Excited</button>
+                    <button class="excitement-btn very-excited-btn" onclick="goToNext('year1', 'year2')">🎉 VERY EXCITED!!!</button>
+                </div>
+                <p class="warning-text" id="year1-warning"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="year2-screen" class="screen timeline-screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="year-container">
+            <div class="year-header">
+                <h2 class="year-title">US at Class 8 💜</h2>
+                <p class="year-subtitle">Fighting, Gossiping & Growing Together</p>
+            </div>
+
+            <div class="year-content">
+                <div class="memory-text">
+                    <p>Another year where we fought, got friends again and again, gossiped harder than before, but stayed always together... no matter what! 😌 Fighting for not letting Prakruti sit in the middle, and me being class leader was worse. Handling Padmaraj sir and Meghraj sir was even worse! 😂 But through it all, you were my constant.</p>
+                </div>
+
+                <div class="photo-gallery" id="year2-gallery">
+                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                </div>
+
+                <div class="memory-caption">US Still survived 💪</div>
+
+                <div class="cartoon-theme">
+                    <div class="sticker-large">📏</div>
+                    <p class="theme-text">Tall & Short Best Friends 👯</p>
+                </div>
+
+                <div class="music-player">
+                    <button class="music-btn" onclick="playYearMusic('year2')">🎵 Play Memories Song 🎵</button>
+                    <p class="music-credit">YeiAjOIiQHo (YouTube)</p>
+                </div>
+            </div>
+
+            <div class="excitement-container">
+                <p class="excitement-text">Nikki, excited for what's next? 👀</p>
+                <div class="button-group">
+                    <button class="excitement-btn not-excited-btn" onclick="dodgeButton(this, 'year2')">😒 Not Excited</button>
+                    <button class="excitement-btn excited-btn" onclick="dodgeButton(this, 'year2')">😊 Excited</button>
+                    <button class="excitement-btn very-excited-btn" onclick="goToNext('year2', 'year3')">🎉 VERY EXCITED!!!</button>
+                </div>
+                <p class="warning-text" id="year2-warning"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="year3-screen" class="screen timeline-screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="year-container">
+            <div class="year-header">
+                <h2 class="year-title">US Class 9 ✨</h2>
+                <p class="year-subtitle">Gooey Memories & Forever Susu Partner</p>
+            </div>
+
+            <div class="year-content">
+                <div class="memory-text">
+                    <p>Class 9 with gooey memories and fear of entering Class 10! By now I'm addicted to your lunch boxes and those snack time cuddles. You'll stay my forever susu partner! 💕 Going alone to the washroom without you was a nightmare. Gossiping about teachers and school, blaming them and moving on... attempting to participate in anchoring (Likhita stole our show though! 😂). Dancing, laughing, fighting... we successfully spent this year too. By now you hated me, but I always chose you over any other friend.</p>
+                </div>
+
+                <div class="photo-gallery" id="year3-gallery">
+                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                </div>
+
+                <div class="memory-caption">I always choose you over any other friend 👯‍♀️</div>
+
+                <div class="cartoon-theme">
+                    <div class="sticker-large">🍔</div>
+                    <p class="theme-text">Motu Patlu Adventures 🎪</p>
+                </div>
+
+                <div class="music-player">
+                    <button class="music-btn" onclick="playYearMusic('year3')">🎵 Play Memories Song 🎵</button>
+                    <p class="music-credit">xr2NN07HLeU (YouTube)</p>
+                </div>
+            </div>
+
+            <div class="excitement-container">
+                <p class="excitement-text">Ready for the Class 10 chaos? 😂</p>
+                <div class="button-group">
+                    <button class="excitement-btn not-excited-btn" onclick="dodgeButton(this, 'year3')">😒 Not Excited</button>
+                    <button class="excitement-btn excited-btn" onclick="dodgeButton(this, 'year3')">😊 Excited</button>
+                    <button class="excitement-btn very-excited-btn" onclick="goToNext('year3', 'year4')">🎉 VERY EXCITED!!!</button>
+                </div>
+                <p class="warning-text" id="year3-warning"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="year4-screen" class="screen timeline-screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="year-container">
+            <div class="year-header">
+                <h2 class="year-title">Class 10 - SSLC 📚</h2>
+                <p class="year-subtitle">From Farming Fields to Final Exams</p>
+            </div>
+
+            <div class="year-content">
+                <div class="memory-text">
+                    <p>Can we call this year a massacre? We lived from farming the field to seeing it demolished! Seeing the watermelon creeper growing every day to just getting disappeared one day... Cheating in tests and drawing that India map and other science diagrams. Struggling in writing essays in Kannada (both of us! 😅), Hindi (you especially!), surviving Annapurna ma'am's grammar tests every single day. Going to Pune for Teacher's Day and Ganesh Chaturthi, sports day, Friday Satsangs, Saraswati Pooja, inspiring assemblies every day... we grew up so much. We cannot forget the boards! 😂😂 SSLC no words can define this.</p>
+                </div>
+
+                <div class="photo-gallery" id="year4-gallery">
+                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                </div>
+
+                <div class="memory-caption">SSLC - No words can define this 🏆</div>
+
+                <div class="cartoon-theme">
+                    <div class="sticker-large">🤖</div>
+                    <p class="theme-text">Doraemon's Magical Support 🎩✨</p>
+                </div>
+
+                <div class="music-player">
+                    <button class="music-btn" onclick="playYearMusic('year4')">🎵 Play Memories Song 🎵</button>
+                    <p class="music-credit">wvN-ODPv5g4 (YouTube)</p>
+                </div>
+            </div>
+
+            <div class="excitement-container">
+                <p class="excitement-text">Ready for long distance? 🥺</p>
+                <div class="button-group">
+                    <button class="excitement-btn not-excited-btn" onclick="dodgeButton(this, 'year4')">😒 Not Excited</button>
+                    <button class="excitement-btn excited-btn" onclick="dodgeButton(this, 'year4')">😊 Excited</button>
+                    <button class="excitement-btn very-excited-btn" onclick="goToNext('year4', 'year5')">🎉 VERY EXCITED!!!</button>
+                </div>
+                <p class="warning-text" id="year4-warning"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="year5-screen" class="screen timeline-screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="year-container">
+            <div class="year-header">
+                <h2 class="year-title">PUC 1 - Distance But Not Apart 💔</h2>
+                <p class="year-subtitle">You in Davangere, Me in Gulbarga & Shahapur</p>
+            </div>
+
+            <div class="year-content">
+                <div class="memory-text">
+                    <p>You moving to Davangere and me surviving the year in Gulbarga and Shahapur... Missing you every single day. Talking quarterly, monthly about each other's life. The distance hurt, but our friendship never wavered. Every call, every message was a reminder that distance is just a number. You were still my constant, just across some kilometers. No matter where we were, I missed you every day. 💔 But this separation only made me realize how precious you are to me.</p>
+                </div>
+
+                <div class="photo-gallery" id="year5-gallery">
+                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                </div>
+
+                <div class="memory-caption">Miss you every day 💌</div>
+
+                <div class="cartoon-theme">
+                    <div class="sticker-large">👻</div>
+                    <p class="theme-text">Totoro Cozy Memories 🌲</p>
+                </div>
+
+                <div class="music-player">
+                    <button class="music-btn" onclick="playYearMusic('year5')">🎵 Play Memories Song 🎵</button>
+                    <p class="music-credit">-FnYsctClJs (YouTube)</p>
+                </div>
+            </div>
+
+            <div class="excitement-container">
+                <p class="excitement-text">10 years... ready for forever? 🌹</p>
+                <div class="button-group">
+                    <button class="excitement-btn not-excited-btn" onclick="dodgeButton(this, 'year5')">😒 Not Excited</button>
+                    <button class="excitement-btn excited-btn" onclick="dodgeButton(this, 'year5')">😊 Excited</button>
+                    <button class="excitement-btn very-excited-btn" onclick="goToNext('year5', 'final')">🎉 VERY EXCITED!!!</button>
+                </div>
+                <p class="warning-text" id="year5-warning"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCKED FUTURE CHAPTERS -->
+    <section id="locked-screen" class="screen timeline-screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="year-container">
+            <div class="locked-chapter">
+                <div class="lock-icon">🔐✨</div>
+                <h2>To Be Continued...</h2>
+                <p>Years 6-10 are still being written! 💫</p>
+                <p class="locked-message">Our story isn't over yet, Nikki...</p>
+                <p>More magical chapters are waiting for you in the future birthdays 🌹</p>
+                <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL EMOTIONAL SCREEN -->
+    <section id="final-screen" class="screen">
+        <div class="close-btn" onclick="backToMenu()">✕</div>
+        <div class="final-container">
+            <div class="final-header">
+                <h2>10 Years Down, Forever to Go 💕</h2>
+            </div>
+
+            <canvas id="fireworks-canvas"></canvas>
+
+            <div class="final-message">
+                <p class="final-quote">Finally, this is the last message where I want to say how much I love you... and I miss you so much in this stage of my life without you...</p>
+                
+                <p class="final-main">Happiest Birthday to my bestest friend for life! 🎂✨</p>
+                
+                <p class="final-prayer">I pray to god that I get you in all 7 lives 🙏💖</p>
+                
+                <p class="final-love">Love you❤️😍</p>
+
+                <div class="signature">
+                    <p>- Lee 💌</p>
+                </div>
+            </div>
+
+            <div class="final-memories">
+                <p class="memories-text">Thank you for 10 years of:</p>
+                <div class="memories-grid">
+                    <div class="memory-item">Laughter 😂</div>
+                    <div class="memory-item">Tears 😭</div>
+                    <div class="memory-item">Adventures 🌍</div>
+                    <div class="memory-item">Late Night Talks 🌙</div>
+                    <div class="memory-item">Fights & Makes Up 💔💕</div>
+                    <div class="memory-item">Lunch Box Cuddles 🍱</div>
+                    <div class="memory-item">Inside Jokes 😜</div>
+                    <div class="memory-item">Unconditional Love 💖</div>
+                </div>
+            </div>
+
+            <div class="final-cartoon-celebration">
+                <div class="celebration-sticker">🎉</div>
+                <div class="celebration-sticker">💖</div>
+                <div class="celebration-sticker">🌹</div>
+                <div class="celebration-sticker">✨</div>
+                <div class="celebration-sticker">🎊</div>
+            </div>
+
+            <button class="restart-btn" onclick="restartExperience()">🎈 Start Again 🎈</button>
+        </div>
+    </section>
+
+    <!-- MENU SCREEN -->
+    <section id="menu-screen" class="screen">
+        <div class="menu-container">
+            <h1 class="menu-title">✨ Nikki's Birthday Journey ✨</h1>
+            <p class="menu-subtitle">Select a Year to Explore 💖</p>
+
+            <div class="photo-upload">
+                <button class="upload-btn" onclick="openPhotoUpload()">📸 Upload Your Memories 📸</button>
+                <p class="upload-hint">Select 24-25 photos from your device or Google Photos</p>
+            </div>
+
+            <div class="menu-buttons">
+                <button class="menu-btn year-btn" onclick="goToYear('year1')">Year 1: Class 7 🌸</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year2')">Year 2: Class 8 💜</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year3')">Year 3: Class 9 ✨</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year4')">Year 4: Class 10 📚</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year5')">Year 5: PUC 1 💔</button>
+                <button class="menu-btn year-btn" onclick="goToYear('locked')">Years 6-10: 🔐 Coming Soon</button>
+            </div>
+
+            <button class="final-btn" onclick="goToFinal()">💌 Final Message 💌</button>
+        </div>
+    </section>
+
+    <!-- Hidden file input for photos -->
+    <input type="file" id="photo-input" multiple accept="image/*" style="display:none;" onchange="handlePhotoUpload(event)">
+
+    <script src="script.js"></script>
+</body>
+</html>
