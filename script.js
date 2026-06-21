@@ -16,6 +16,9 @@ function handlePhotoUpload(event) {
     // Distribute photos across years
     distributePhotos();
     
+    // Update status
+    document.getElementById('upload-status').textContent = `${uploadedPhotos.length} photos uploaded! 📸`;
+    
     // Show confirmation
     alert(`✨ ${uploadedPhotos.length} beautiful memories uploaded! ✨`);
     
@@ -32,16 +35,18 @@ function distributePhotos() {
 
     years.forEach((year, index) => {
         const galleryEl = document.getElementById(`${year}-gallery`);
-        galleryEl.innerHTML = '';
-        
-        const photosForThisYear = photoPerYear + (index < remainder ? 1 : 0);
-        
-        for (let i = 0; i < photosForThisYear && photoIndex < uploadedPhotos.length; i++) {
-            const img = document.createElement('img');
-            img.src = uploadedPhotos[photoIndex];
-            img.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
-            galleryEl.appendChild(img);
-            photoIndex++;
+        if (galleryEl) {
+            galleryEl.innerHTML = '';
+            
+            const photosForThisYear = photoPerYear + (index < remainder ? 1 : 0);
+            
+            for (let i = 0; i < photosForThisYear && photoIndex < uploadedPhotos.length; i++) {
+                const img = document.createElement('img');
+                img.src = uploadedPhotos[photoIndex];
+                img.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
+                galleryEl.appendChild(img);
+                photoIndex++;
+            }
         }
     });
 }
@@ -149,6 +154,8 @@ function dodgeButton(button, year) {
 // ============= CONFETTI EFFECT =============
 function triggerConfetti() {
     const canvas = document.getElementById('confetti-canvas');
+    if (!canvas) return;
+    
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const ctx = canvas.getContext('2d');
@@ -175,7 +182,7 @@ function triggerConfetti() {
         confettiPieces.forEach((piece, index) => {
             piece.x += piece.vx;
             piece.y += piece.vy;
-            piece.vy += 0.1; // gravity
+            piece.vy += 0.1;
             piece.rotation += piece.rotationVelocity;
 
             ctx.save();
@@ -256,12 +263,10 @@ function triggerFireworks() {
     function animateFireworks() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Create new fireworks
         if (Math.random() < 0.1) {
             fireworks.push(new Firework());
         }
 
-        // Update and draw fireworks
         for (let i = fireworks.length - 1; i >= 0; i--) {
             fireworks[i].update();
             fireworks[i].draw();
@@ -272,7 +277,6 @@ function triggerFireworks() {
             }
         }
 
-        // Update and draw particles
         for (let i = particles.length - 1; i >= 0; i--) {
             const p = particles[i];
             p.x += p.vx;
@@ -299,7 +303,6 @@ function triggerFireworks() {
         }
     }
 
-    // Create initial fireworks burst
     for (let i = 0; i < 5; i++) {
         fireworks.push(new Firework());
     }
@@ -318,8 +321,6 @@ function playYearMusic(year) {
     };
 
     const videoId = youtubeIds[year];
-    
-    // Open YouTube video in new tab
     const url = `https://www.youtube.com/watch?v=${videoId}`;
     window.open(url, '_blank');
 }
@@ -335,15 +336,13 @@ window.addEventListener('resize', () => {
 
 // ============= INITIALIZATION =============
 document.addEventListener('DOMContentLoaded', () => {
-    // Show opening screen
+    console.log('Website loaded! Starting animation...');
     showScreen('opening-screen');
 
-    // Trigger initial confetti on page load
     setTimeout(() => {
         triggerConfetti();
     }, 500);
 
-    // Add cursor sparkle effect
     addCursorSparkles();
 });
 
@@ -372,7 +371,6 @@ function addCursorSparkles() {
         setTimeout(() => sparkle.remove(), 1000);
     }
 
-    // Add animation to stylesheet
     if (!document.getElementById('sparkle-style')) {
         const style = document.createElement('style');
         style.id = 'sparkle-style';
