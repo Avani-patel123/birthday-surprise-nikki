@@ -64,6 +64,31 @@
         </div>
     </section>
 
+    <!-- MENU SCREEN -->
+    <section id="menu-screen" class="screen">
+        <div class="menu-container">
+            <h1 class="menu-title">✨ Nikki's Birthday Journey ✨</h1>
+            <p class="menu-subtitle">Select a Year to Explore 💖</p>
+
+            <div class="photo-upload">
+                <button class="upload-btn" onclick="openPhotoUpload()">📸 Upload Your Memories 📸</button>
+                <p class="upload-hint">Select 24-25 photos from your device or Google Photos</p>
+                <p style="margin-top: 10px; color: #ff69b4; font-weight: 600; font-size: 0.9rem;">Status: <span id="upload-status">No photos uploaded yet</span></p>
+            </div>
+
+            <div class="menu-buttons">
+                <button class="menu-btn year-btn" onclick="goToYear('year1')">Year 1: Class 7 🌸</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year2')">Year 2: Class 8 💜</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year3')">Year 3: Class 9 ✨</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year4')">Year 4: Class 10 📚</button>
+                <button class="menu-btn year-btn" onclick="goToYear('year5')">Year 5: PUC 1 💔</button>
+                <button class="menu-btn year-btn" onclick="goToYear('locked')">Years 6-10: 🔐 Coming Soon</button>
+            </div>
+
+            <button class="final-btn" onclick="goToFinal()">💌 Final Message 💌</button>
+        </div>
+    </section>
+
     <!-- TIMELINE SCREENS (5 Years) -->
     <section id="year1-screen" class="screen timeline-screen">
         <div class="close-btn" onclick="backToMenu()">✕</div>
@@ -79,7 +104,7 @@
                 </div>
 
                 <div class="photo-gallery" id="year1-gallery">
-                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                    <div class="gallery-placeholder">📸 Photos will appear here after upload 📸</div>
                 </div>
 
                 <div class="memory-caption">US 💖</div>
@@ -121,7 +146,7 @@
                 </div>
 
                 <div class="photo-gallery" id="year2-gallery">
-                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                    <div class="gallery-placeholder">📸 Photos will appear here after upload 📸</div>
                 </div>
 
                 <div class="memory-caption">US Still survived 💪</div>
@@ -163,7 +188,7 @@
                 </div>
 
                 <div class="photo-gallery" id="year3-gallery">
-                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                    <div class="gallery-placeholder">📸 Photos will appear here after upload 📸</div>
                 </div>
 
                 <div class="memory-caption">I always choose you over any other friend 👯‍♀️</div>
@@ -205,7 +230,7 @@
                 </div>
 
                 <div class="photo-gallery" id="year4-gallery">
-                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                    <div class="gallery-placeholder">📸 Photos will appear here after upload 📸</div>
                 </div>
 
                 <div class="memory-caption">SSLC - No words can define this 🏆</div>
@@ -247,7 +272,7 @@
                 </div>
 
                 <div class="photo-gallery" id="year5-gallery">
-                    <div class="gallery-placeholder">📸 Photos will appear here 📸</div>
+                    <div class="gallery-placeholder">📸 Photos will appear here after upload 📸</div>
                 </div>
 
                 <div class="memory-caption">Miss you every day 💌</div>
@@ -337,30 +362,6 @@
             </div>
 
             <button class="restart-btn" onclick="restartExperience()">🎈 Start Again 🎈</button>
-        </div>
-    </section>
-
-    <!-- MENU SCREEN -->
-    <section id="menu-screen" class="screen">
-        <div class="menu-container">
-            <h1 class="menu-title">✨ Nikki's Birthday Journey ✨</h1>
-            <p class="menu-subtitle">Select a Year to Explore 💖</p>
-
-            <div class="photo-upload">
-                <button class="upload-btn" onclick="openPhotoUpload()">📸 Upload Your Memories 📸</button>
-                <p class="upload-hint">Select 24-25 photos from your device or Google Photos</p>
-            </div>
-
-            <div class="menu-buttons">
-                <button class="menu-btn year-btn" onclick="goToYear('year1')">Year 1: Class 7 🌸</button>
-                <button class="menu-btn year-btn" onclick="goToYear('year2')">Year 2: Class 8 💜</button>
-                <button class="menu-btn year-btn" onclick="goToYear('year3')">Year 3: Class 9 ✨</button>
-                <button class="menu-btn year-btn" onclick="goToYear('year4')">Year 4: Class 10 📚</button>
-                <button class="menu-btn year-btn" onclick="goToYear('year5')">Year 5: PUC 1 💔</button>
-                <button class="menu-btn year-btn" onclick="goToYear('locked')">Years 6-10: 🔐 Coming Soon</button>
-            </div>
-
-            <button class="final-btn" onclick="goToFinal()">💌 Final Message 💌</button>
         </div>
     </section>
 
